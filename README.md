@@ -1,3 +1,12 @@
+### Forked from [modelfoxdotdev/modelfox-go](https://github.com/modelfoxdotdev/modelfox-go)
+_Many thanks for such tool_
+
+# Purpose of fork
+Fixed bug with path (directory names not same as in `CFLAGS` and `LDFLAGS`)  
+I am not sure how this bug could appear in original repo.
+I tried to contact with dev - no result for now.
+I'll update this readme when I get some info or the bug in original repo is fixed
+
 # ModelFox for Go
 
 - [Watch the Video](https://www.modelfox.dev)
@@ -8,11 +17,11 @@ The ModelFox Go module makes it easy to make predictions with your ModelFox mach
 ## Usage
 
 ```
-$ go get -u github.com/modelfoxdotdev/modelfox-go
+$ go get -u github.com/TimaSlipko/modelfox-go
 ```
 
 ```go
-import "github.com/modelfoxdotdev/modelfox-go"
+import "github.com/TimaSlipko/modelfox-go"
 
 model, _ := modelfox.LoadModelFromPath("./heart_disease.modelfox", nil)
 defer model.Destroy()
@@ -40,10 +49,4 @@ ModelFox for Go is currently supported on the following combinations of `$GOARCH
 - `arm64` `darwin`
 - `amd64` `windows`
 
-Are you interested in another platform? [Open an issue](https://github.com/modelfoxdotdev/modelfox/issues/new) or send us an email at [help@modelfox.dev](mailto:help@modelfox.dev).
-
 ModelFox for Go links to the modelfox C library, so cgo is required. The modelfox C library will be linked statically into your executable, so when you run `go build` you will still get a statically linked executable you can run anywhere without having to worry about dynamic linking errors.
-
-## Examples
-
-The source for this package contains a number of examples in the `examples` directory. Each example has a `README.md` explaining how to run it.
